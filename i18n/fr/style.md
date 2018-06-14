@@ -22,8 +22,8 @@ $ cd kovri/ && cpplint src/path/to/my/file && [éditez le fichier manuellement p
 
 ## Voici ce qui n'est pour l'instant pas capturé par *clang-format* et qui diffère du style C++ proposé par Google
 
-- Évitez le préfixe ```k``` et ```MACRO_TYPE``` pour les constantes
-- Utilisez les 3 slashs ```/// C++ comments``` quand vous documentez pour Doxygen
+- Évitez le préfixe `k` et `MACRO_TYPE` pour les constantes
+- Utilisez les 3 slashs `/// C++ comments` quand vous documentez pour Doxygen
 - Essayez de documenter tout votre travail pour Doxygen au fur et à mesure
 - Si l'anonymat est important pour vous, essayez de fondre votre style sur celui des autres contributeurs
 

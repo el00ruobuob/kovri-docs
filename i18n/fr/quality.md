@@ -4,7 +4,7 @@ Ce qui suit est une proposition de procédure pour la QA. Bien que linéaire de 
 
 ## Étape 1 : Revue de base
 
-- Passez en revue les *open issues* sur notre [*Tracker d'Issues*](https://github.com/monero-project/kovri/issues/)
+- Passez en revue les problèmes ouverts (*open issues*) sur notre [*Tracker d'Issues*](https://github.com/monero-project/kovri/issues/)
 - Lisez notre [Processus de Réponse à toute Vulnerabilité](https://github.com/anonimal/meta/blob/master/VULNERABILITY_RESPONSE_PROCESS.md)
 - Le code doit respecter nos lignes directrices de contribution
 - Notez les domaines qui doivent être améliorés (mentalement ou dans le code)
@@ -14,7 +14,7 @@ Ce qui suit est une proposition de procédure pour la QA. Bien que linéaire de 
 
 - Faites une revue de specs complète par module, p.ex. Streaming, I2PControl, etc.
   - Le code doit être en ligne avec les parties essentielles des specs qui vont garantir le même (ou un meilleur) niveau d'anonymat que proposé par java I2P
-  - Refactorez/implémentez/patchez quand et où c'est nécessaire
+  - Remaniez/implémentez/patchez quand et où c'est nécessaire
 - Garantissez une implémentation conforme à C++11/14
   - Revoyez l'étape 2 si besoin
 - Résolvez tous les TODOs liés
@@ -39,16 +39,16 @@ Ce qui suit est une proposition de procédure pour la QA. Bien que linéaire de 
 - Résolvez les bugs/*issues* prioritaires
 - Écrivez des tests unitaires pour tous les modules
   - Lancez les tests. Lancez-les de nouveau
-  - Faites une revue complète des résultats des tests. Patchez si besoin. Refactorez si nécessaire
-- Assurez-vous régulièrement que l'automatisation fonctionne 
+  - Faites une revue complète des résultats des tests. Patchez si besoin. Remaniez si nécessaire
+- Assurez-vous régulièrement que l'automatisation fonctionne
   - valgrind, doxygen, clang-format
-  - Patchez si besoin, refactorez si nécessaire
+  - Patchez si besoin, remaniez si nécessaire
 
 ## Étape 5 : Discussion
 
 - Conversez avec des collègues de la communauté
   - Les discussions devraient se faire de manière publique via des *tickets*, des réunions, et/ou par chat sur IRC
-- Acceptez tous les feedbacks et, en réponse, produisez des résultats tangibles
+- Acceptez tous les retours et, en réponse, produisez des résultats tangibles
 - Si c'est satisfaisant, avancez à l'étape suivante, ou bien répétez cette étape-ci (ou repartez d'une étape précédente)
 
 ## Étape 6 : Répétez le cycle depuis le début

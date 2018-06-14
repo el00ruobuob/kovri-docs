@@ -1,6 +1,6 @@
 ## Étape 0. (Facultatif) Vous pouvez passer la compilation et utiliser directement les binaires
 
-Rendez-vous sur le [README](https://github.com/monero-project/kovri/blob/master/README.md) pour télécharger une version pré-compilée de kovri et les fichiers *checksum*. Vous n'aurez plus qu'à installer et démarrer kovri, et vous êtes partis !
+Rendez-vous sur le [README](https://github.com/monero-project/kovri/blob/master/README.md) pour télécharger une version pré-compilée de kovri et les fichiers de somme de contrôle. Vous n'aurez plus qu'à installer et démarrer Kovri, c'est partis !
 
 ## Étape 1. (Si vous compilez) La configuration système minimale
 
@@ -29,12 +29,12 @@ Facultatif :
 
 ## Étape 2. Installations des dépendances
 
-**Note : pour utiliser des *containers* (comme Docker et snapcraft), voir le [Guide d'Utilisation](https://github.com/monero-project/kovri-docs/blob/master/i18n/fr/user_guide.md)**
+**Note : pour utiliser des conteneurs (comme Docker ou snapcraft), voir le [Guide d'Utilisation](https://github.com/monero-project/kovri-docs/blob/master/i18n/fr/user_guide.md)**
 
 ### Ubuntu Xenial (16.04)
 Dépendances requises :
 ```bash
-$ sudo apt-get install git cmake libboost-all-dev libssl-dev  # gcc/g++ et libssl installés par défaut
+$ sudo apt-get install git cmake libboost-all-dev libssl-dev  # gcc/g++ et libssl installées par défaut
 ```
 Dépendances facultatives :
 ```bash
@@ -44,7 +44,7 @@ $ sudo apt-get install libminiupnpc-dev # pour les utilisateurs derrière un NAT
 ```
 
 ### Ubuntu Trusty (14.04)
-Vous pouvez ou bien compiler Boost depuis les sources ou bien utiliser PPA
+Vous pouvez soit compiler Boost depuis les sources, soit utiliser PPA
 Voici les instructions pour PPA :
 
 Dépendances requises :
@@ -63,10 +63,10 @@ $ sudo apt-get install libminiupnpc-dev # pour les utilisateurs derrière un NAT
 ```
 
 ### Debian (stable)
-We'll need to pull from ```testing``` for ```Boost 1.58+``` and because of a [broken CMake](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826656). For documentation's sake, we will pull all dependencies from ```testing```. If you're unfamiliar with apt-pinning, proceed with the following before installing dependencies:
+Il est nécessaire de récupérer `Boost 1.58+` depuis `testing` à cause d'un [CMake en panne](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=826656). Pour simplifier cette documentation, toutes les dépendances seront récupérées depuis `testing`. Si vous n'avez pas l'habitude d'épingler avec apt, procédez comme suit avant d'installer les dépendance :
 
-- Create and edit ```/etc/apt/preferences.d/custom.pref```
-- Enter and save the following:
+- Créez et éditez `/etc/apt/preferences.d/custom.pref`
+- Entrez ce qui suit et sauvegardez :
 
 ```
 Package: *
@@ -77,16 +77,16 @@ Package: *
 Pin: release a=testing
 Pin-Priority: 650
 ```
-- Create and edit ```/etc/apt/sources.list.d/custom.list```
+- Créez et éditez `/etc/apt/sources.list.d/custom.list`
 ```
 # Stable
-deb [Enter your mirror here] stable main non-free contrib
+deb [Entrez votre miroir ici] stable main non-free contrib
 # Testing
-deb [Enter your mirror here] testing main non-free contrib
+deb [Entrez votre miroir ici] testing main non-free contrib
 ```
-- Replace ```[Enter your mirror here]``` with your mirror (see ```/etc/apt/sources.list```)
-- Run ```$ sudo apt-get update```
-- Install dependencies with the ```-t testing``` switch:
+- Remplacez `[Entrez votre miroir ici]` par votre miroir (consultez `/etc/apt/sources.list`)
+- Lancez `$ sudo apt-get update`
+- Installez les dépendances avec l'option `-t testing` :
 
 Dépendances requises :
 ```bash
@@ -173,10 +173,10 @@ pacman -Sy
 pacman -Su --ignoregroup base
 pacman -Su
 ```
-* Pour ceux d'entre vous qui connaissent déjà pacman, vous pouvez lancer ```pacman -Syu``` pour mettre à jour, mais vous pourriez avoir des erreurs et avoir besoin de relancer MSYS2 si les dépendances de pacman sont mises à jour.
-* Installez les dépendances : ```pacman -S make mingw-w64-x86_64-cmake mingw-w64-x86_64-gcc mingw-w64-x86_64-boost mingw-w64-x86_64-openssl```
-* Facultatif : ```mingw-w64-x86_64-doxygen```  (vous aurez besoin de [Graphviz](http://graphviz.org/doc/winbuild.html) pour doxygen)
-* Note : Vous aurez besoin de ``` mingw-w64-x86_64-miniupnpc``` si vous êtes derrière un pare-feu NAT restrictif.
+* Pour ceux d'entre vous qui connaissent déjà pacman, vous pouvez lancer `pacman -Syu` pour le mettre à jour, mais vous pourriez avoir des erreurs et avoir besoin de relancer MSYS2 si les dépendances de pacman sont mises à jour.
+* Installez les dépendances : `pacman -S make mingw-w64-x86_64-cmake mingw-w64-x86_64-gcc mingw-w64-x86_64-boost mingw-w64-x86_64-openssl`
+* Facultatif : `mingw-w64-x86_64-doxygen`  (vous aurez besoin de [Graphviz](http://graphviz.org/doc/winbuild.html) pour doxygen)
+* Note : Vous aurez besoin de `mingw-w64-x86_64-miniupnpc` si vous êtes derrière un pare-feu NAT restrictif.
 
 ## Étape 3. Compilation
 
@@ -185,12 +185,12 @@ pacman -Su
 $ git clone --recursive https://github.com/monero-project/kovri
 ```
 
-### 2. Compilez kovri et les dépendances *submodule* en une commande
+### 2. Compilez kovri et les dépendances des sous-modules en une commande
 ```bash
 $ make  # pour réduire le temps de compilation : `make -j <available CPU cores>`. Par exemple : `make -j4`
 ```
 
-### 3. Installation
+### 3. Installez
 ```bash
 $ make install
 ```
@@ -198,11 +198,11 @@ $ make install
 - Les utilisateurs DOIVENT lancer `make install` pour les nouvelles installations
 - Les développeurs DEVRAIENT lancer `make install` après compilation
 
-### Les autres options que vous pouvez utiliser à la place de l'étape 2 :
+### Autres options que vous pouvez utiliser à la place de l'étape 2 :
 
 Pour une liste complète des options, voir les *targets* dans le fichier [Makefile](https://github.com/monero-project/kovri/blob/master/Makefile).
 
-#### Notes
+#### Remarque
 - Tous les résultats de compilation (y compris Doxygen) se trouveront dans le dossier de résultats de compilation.
 
 ### Clang
@@ -217,7 +217,7 @@ $ export CC=clang CXX=clang++  # remplacez `clang` avec la version de clang ou l
 $ export CC=clang36 CXX=clang++36  # ou une version de clang plus récente
 $ gmake && gmake install
 ```
-- Remplacez ```make``` avec ```gmake``` pour toutes les autres options de compilation.
+- Remplacez `make` par `gmake` pour toutes les autres options de compilation.
 
 
 ### OpenBSD
@@ -225,11 +225,11 @@ $ gmake && gmake install
 $ export CC=clang CXX=clang++  # clang recommendé, ou bien egcc/eg++
 $ gmake && gmake install
 ```
-- Remplacez ```make``` avec ```gmake``` pour toutes les autres options de compilation.
+- Remplacez `make` par `gmake` pour toutes les autres options de compilation.
 
 
-### (Facultatif) Chemin custom
-Vous pouvez changer le chemin d'accès des données de Kovri. Exportez simplement le ```KOVRI_DATA_PATH```. Par exemple en faisant :
+### (Facultatif) Chemin personnalisé
+Vous pouvez changer le chemin d'accès des données de Kovri. Exportez simplement le `KOVRI_DATA_PATH`. Par exemple en faisant :
 
 ```bash
 $ export KOVRI_DATA_PATH=$HOME/.un-autre-chemin-d-accès-kovri && make && make install
@@ -264,7 +264,7 @@ Obtenez libFuzzer :
 $ git clone https://chromium.googlesource.com/chromium/llvm-project/llvm/lib/Fuzzer contrib/Fuzzer
 ```
 
-Compilez kovri avec les tests fuzz activés :
+Compilez Kovri avec les tests fuzz activés :
 
 ```bash
 $ PATH="~/third_party/llvm-build/Release+Asserts/bin:$PATH" CC=clang CXX=clang++ make fuzz-tests
