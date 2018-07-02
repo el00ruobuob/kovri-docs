@@ -1,7 +1,7 @@
 # Alors, vous avez installé Kovri. Et maintenant?
 
 ## Etape 1. Ouvrir votre NAT/Firewall
-1. Choisissez un port entre ```9111``` et ```30777```
+1. Choisissez un port entre `9111` et `30777`
 2. **Enregistrez ce port dans votre fichier de configuration** (`kovri.conf`)
 3. Créez une permission dans votre NAT/Firewall pour autoriser les connexions TCP/UDP entrantes sur ce port (Voir les notes ci-dessous si vous n'y avez pas accès)
 
@@ -9,7 +9,7 @@ Notes:
 
 - **Ne partagez pas votre numéro de port avec n'importe qui car cela affecterait votre anonymat!**
 - Si vous n'enregistrez pas votre port, Kovri va aléatoirement en générer un nouveau à chaque démarrage (vous avez aussi le choix d'affecter le port de l'option `--port` à chaque démarrage).
-- Si vous n'avez pas accès à votre NAT, réferez vous aux instructions [BUILDING](https://github.com/monero-project/kovri-docs/blob/master/i18n/fr/building.md) selon votre système d'exploitation.
+- Si vous n'avez pas accès à votre NAT, référez vous aux instructions [BUILDING](https://github.com/monero-project/kovri-docs/blob/master/i18n/fr/building.md) selon votre système d'exploitation.
 
 ## Etape 2. Configurer Kovri
 
@@ -46,8 +46,8 @@ Notes:
 - **Exactement de la même façon que Tor, SSL n'est pas nécessaire pour utiliser sans risque et de façon sûre le réseau**
 - Le protocole SSL et le service outproxy ne sont pas implémentés pour le moment
 - Si quelqu'un vous donne une adresse .i2p qui n'est pas dans votre carnet d'adresses, utilisez le service `Jump` à l'adresse http://stats.i2p/i2p/lookup.html
-- Jetez un oeil au fichier hosts.txt dans votre répertoire de données pour voir une liste de sites par défaut que vous pouvez visiter. The docker image comes with the defaults of Kovri,
-- Enfin, l'implémentation du Proxy HTTP et du carnet d'adresse sont en cours de carnets d'adresses sont en cours de développemment et ne sont pas complètement terminés.
+- Jetez un œil au fichier hosts.txt dans votre répertoire de données pour voir une liste de sites par défaut que vous pouvez visiter.
+- Enfin, l'implémentation du Proxy HTTP et du carnet d'adresse sont en cours de carnets d'adresses sont en cours de développement et ne sont pas complètement terminés.
 
 ## Etape 6. Hébergez votre propre service garlic (garlic-site/eepsite)
 - Lisez `tunnels.conf` pour apprendre comment définir un serveur tunnel qui pointe vers le service que vous hébergez.
@@ -60,11 +60,11 @@ Notes:
 # Alternatively, Docker
 
 ## Etape 1. Installer Docker
-Installer Docker est externe à ces instructions, veuillez vous réferer à la [documentation docker](https://docs.docker.com/engine/installation/)
+Installer Docker est hors du champ de ces instructions, veuillez vous référer à la [documentation docker](https://docs.docker.com/engine/installation/)
 
 ## Etape 2. Configurer / Ouvrir Firewall
-L'image docker est fournie avec les valeurs par défaut de Kovri, cependant elle peut être configurer comme expliqué dans les sections précedentes.
-Vous devriez pouvoir choisir un port au hasard et l'ouvrir (voir sections précedentes).
+L'image docker est fournie avec les valeurs par défaut de Kovri, cependant elle peut être configurée comme expliqué dans les sections précédentes.
+Vous devriez pouvoir choisir un port au hasard et l'ouvrir (voir sections précédentes).
 
 ## Etape 3. Fonctionnement
 
